@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+
+# finds the %mem value from the .com file:
+while IFS= read -r line; do
+	MEMNUMBER=$(grep mem | sed 's/[^0-9]*//g')
+done < $1.com
+MEM=$(($MEMNUMBER * 2000))    # multiplies the %mem by 2000 to get value in MB
+
+
+
+# finds the nproc value from the .com file:
+
+while IFS= read -r line; do
+	PROCNUMBER=$(grep nprocshared | sed 's/[^0-9]*//g')
+done < $1.com
+
+
+
+# replaces the word "disk" in blank.sh by $MEM string as evaluated above, replaces the word "dd" in blank.sh by the 2nd positional parameter, the word "hh" by the 3rd position parameter, and the word "file" (globally) by the 1st position paramter (name of file to save as):
+
+sed -e 's/disk/'$MEM'/' -e 's/dd/'$2'/' -e 's/hh/'$3'/' -e 's/nproc/'$PROCNUMBER'/' -e 's/file/'$1'/g' blank.sh > $1.sh
+
