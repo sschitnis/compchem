@@ -1,6 +1,7 @@
 #!/bin/bash
 
-
+# This script takes a *.com file and uses information in it together with some commad line input (days/hours) via positional parameters and a blank.sh template to create a new *.sh file and then submits it. In order to use it, there must be a blank.sh file in the same folder.
+# Put this in the same folder as the *.com and blank.sh, then run "submit file dd hh" where file = name of the .com file (without .com extension), dd = number of days, and hh = number of hours. 
 
 # finds the %mem value from the .com file:
 while IFS= read -r line; do
