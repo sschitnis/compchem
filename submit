@@ -22,3 +22,5 @@ done < $1.com
 
 sed -e 's/disk/'$MEM'/' -e 's/dd/'$2'/' -e 's/hh/'$3'/' -e 's/nproc/'$PROCNUMBER'/' -e 's/file/'$1'/g' blank.sh > $1.sh
 
+sbatch $1.sh
+
