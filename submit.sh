@@ -2,7 +2,7 @@
 
 # This script takes a *.com file and uses information in it together with some commad line input (days/hours) via positional parameters to create a new *.sh file and then submits it. In order to do so, the script creates a "blank.sh" file using the requisite lines via the "cat" command. It then substitutes the contents of this file using "sed" and saves it with the same name as the initial * file.
 
-# HOW TO USE THIS SCRIPT: Put this script in the same folder as the *.com, then run "submit file dd hh" where file = name of the .com file (without .com extension), dd = number of days, and hh = number of hours. 
+# HOW TO USE THIS SCRIPT: Method 1: Put this script in the same folder as the *.com, then run "submit.sh file dd hh" where file = name of the .com file (without .com extension), dd = number of days, and hh = number of hours. Method 2: Make the script globally accessible using the instructions in the Deploy file and then run "submit.sh file dd hh". The advantage of this method is that you do not need to have this script in each folder where you have your .com files.
 
 # Create a blank.sh file that has required info.
 cat > blank.sh << EOL
