@@ -1,0 +1,25 @@
+1. Locate the path to the interpreter for the language you are writing in with the which command.
+
+e.g."which bash", "which python", etc.
+
+2. Add that path as an interpreter directive (using #!) on the first line of your script. For example if you want to write a node script and which node returned /usr/local/bin/node, the first line of your script should be: 
+
+"#! /usr/local/bin/node"
+
+3. Give script execute permission:
+
+"chmod u+x scriptname.sh"
+
+4. Move script to one of the directories on the path. You can discover which directories are in your path by typing "echo $PATH" into the command line, which will print a colon seperated list of each of the directories in your path. A common directory in the path for scripts you've written is /usr/local/bin/
+
+For cedar in my case I moved the script to /home/chitnis/bin/ using the command below:
+
+"cp script.sh /home/chitnis/bin/"
+
+Note: you may have to create the /home/username/bin directory if it does not exist. This can be done by 
+
+"cd /home/user/"
+"mkdir bin"
+
+5. The script can now be called upon globally by simply typing its name
+
